@@ -19,6 +19,7 @@ function PrismaAdapter(p) {
         linkAccount: (data) => {
             if(data.email) delete data.email;
             if(data.user_id) delete data.user_id;
+            if(data.steamid) delete data.steamid;
             
             return p.account.create({ data })
         },
