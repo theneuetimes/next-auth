@@ -237,6 +237,7 @@ export function PrismaAdapter(p: PrismaClient): Adapter {
     linkAccount: (data) => {
       if(data.email) delete data.email;
       if(data.user_id) delete data.user_id;
+      if(data.steamid) delete data.steamid;
 
       p.account.create({ data }) as unknown as AdapterAccount,
     }
